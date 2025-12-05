@@ -1,7 +1,8 @@
 [build]
-  command = "npm run build"
-  publish = "client/.next"
-  base = "/"
+  base = "client"
+  command = "npm install && npm run build"
+  publish = ".next"
+  functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "18"
@@ -10,5 +11,5 @@
 [dev]
   command = "npm run dev"
   port = 3001
-  publish = "client/.next"
+  publish = ".next"
   targetPort = 3001
