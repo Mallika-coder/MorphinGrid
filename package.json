@@ -1,12 +1,15 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "name": "morphin-grid",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
-    "build": "next build --no-lint",
-    "start": "next start -p 3001",
-    "lint": "next lint"
+    "dev": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "start": "cd client && npm start",
+    "lint": "cd client && npm run lint"
+  },
+  "engines": {
+    "node": ">=18 <19"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
