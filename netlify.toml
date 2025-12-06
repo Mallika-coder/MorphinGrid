@@ -1,15 +1,19 @@
 [build]
-  base = "client"
-  command = "npm install && npm run build"
-  publish = ".next"
-  functions = "netlify/functions"
+  base = "."
+  command = "cd client && npm install && npm run build"
+  publish = "client/.next"
+  functions = "client/.netlify/functions"
 
 [build.environment]
   NODE_VERSION = "18"
   NEXT_TELEMETRY_DISABLED = "1"
+  NPM_FLAGS = "--prefix=client"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
 
 [dev]
-  command = "npm run dev"
+  command = "cd client && npm run dev"
   port = 3001
-  publish = ".next"
   targetPort = 3001
+  publish = "client/.next"
